@@ -152,7 +152,8 @@ void clear_shared_resources() {
 
 int get_allocated_resources(int resource_type, int pid) {
   int count = 0;
-  for (int i = 0; i < 20; i++) {
+  int i;
+  for (i = 0; i < 20; i++) {
     if (resources[resource_type].instances[i].pid == pid) {
       count++;
     }
@@ -162,7 +163,8 @@ int get_allocated_resources(int resource_type, int pid) {
 
 int get_available_resources(int resource_type) {
   int allocated_resources = 0;
-  for (int i = 0; i < 20; i++) {
+  int i;
+  for (i = 0; i < 20; i++) {
     if (resources[resource_type].instances[i].pid != -1) {
       allocated_resources++;
     }
