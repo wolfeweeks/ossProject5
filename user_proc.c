@@ -45,7 +45,8 @@ typedef struct {
 
 int get_allocated_resources(resource_descriptor_t* resources, int resource_type, int pid) {
   int count = 0;
-  for (int i = 0; i < 20; i++) {
+  int i;
+  for (i = 0; i < 20; i++) {
     if (resources[resource_type].instances[i].pid == pid) {
       count++;
     }
